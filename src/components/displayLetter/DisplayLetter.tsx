@@ -23,5 +23,5 @@ export const DisplayLetter = () => {
     }
   }, [currentIndex, string])
 
-  return <p className="text-red-600">{letter}</p>
+  return <p className="text-5xl text-red-600">{letter}</p>
 }

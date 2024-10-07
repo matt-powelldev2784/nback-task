@@ -2,7 +2,7 @@ import { DisplayLetter } from './displayLetter/DisplayLetter'
 
 function App() {
   return (
-    <div className="relative overflow-hidden bg-white">
+    <div className="relative w-full overflow-hidden bg-white">
       <DisplayLetter />
     </div>
   )
