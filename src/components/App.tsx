@@ -1,3 +1,4 @@
+import './index.css'
 import { DisplayLetter } from './displayLetter/DisplayLetter'
 
 function App() {
