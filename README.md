@@ -1,80 +1,31 @@
-![reactjs-vite-tailwindcss-boilerplate](https://user-images.githubusercontent.com/16243531/217138979-b854309c-4742-4275-a705-f9fec5158217.jpg)
+# N Back Task
 
-# React Tailwindcss Boilerplate build with Vite
 
-This is a boilerplate build with Vite, React 18, TypeScript, Vitest, Testing Library, TailwindCSS 3, Eslint and Prettier.
+## To get started
+1. Clone this repository
+2. Run npm install
+3. Run npm run dev
+4. Open http://localhost:5173/ in your browser
 
-## What is inside?
 
-This project uses many tools like:
+## Deployed App
+TBC
 
-- [Vite](https://vitejs.dev)
-- [ReactJS](https://reactjs.org)
-- [TypeScript](https://www.typescriptlang.org)
-- [Vitest](https://vitest.dev)
-- [Testing Library](https://testing-library.com)
-- [Tailwindcss](https://tailwindcss.com)
-- [Eslint](https://eslint.org)
-- [Prettier](https://prettier.io)
+## My approach
+Build app with Vite, React, TypeScript, TailwindCSS using template form Vite Community.
+Implement testing with Vitest and React Testing Library.
 
-## Getting Started
+### Project plan in bullet points
 
-### Install
+* Responsive design
+* User needs to input their name before game starts
+* Create random seqence of 15 letters
+* Show one at a time for 2 seconds
+* User has to press a key if letter that was shown 2 steps back is displayed again
+* Task ends if 2 error or maximum of 15 letters displayed
+* App to show number of correct answers and errors at end of game
+* Log correct answers and errors including date/time to local storage to mimic backend
+* Make user friendly and engaging
+* Create repo on github with README.md and instruction to get started
+* Deploy on Amazon S3
 
-Create the project.
-
-```bash
-pnpm dlx degit joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate my-app
-```
-
-Access the project directory.
-
-```bash
-cd my-app
-```
-
-Install dependencies.
-
-```bash
-pnpm install
-```
-
-Serve with hot reload at <http://localhost:5173>.
-
-```bash
-pnpm run dev
-```
-
-### Lint
-
-```bash
-pnpm run lint
-```
-
-### Typecheck
-
-```bash
-pnpm run typecheck
-```
-
-### Build
-
-```bash
-pnpm run build
-```
-
-### Test
-
-```bash
-pnpm run test
-```
-
-View and interact with your tests via UI.
-
-```bash
-pnpm run test:ui
-```
-
-## License
-
-This project is licensed under the MIT License.
