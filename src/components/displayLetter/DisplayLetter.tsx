@@ -23,9 +23,5 @@ export const DisplayLetter = () => {
     }
   }, [currentIndex, string])
 
-  return (
-    <p className="border-2 border-red-500 text-center text-10xl font-bold text-red-600">
-      {letter}
-    </p>
-  )
+  return <p className="text-center text-10xl font-bold text-white">{letter}</p>
 }
