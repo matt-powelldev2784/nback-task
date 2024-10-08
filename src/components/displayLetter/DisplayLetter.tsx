@@ -6,7 +6,7 @@ export const DisplayLetter = () => {
   const [letter, setLetter] = useState('')
   const string = useMemo(() => get15LetterString(), [])
 
-  // display a letter every 2 seconds
+  // display a letter every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       if (currentIndex > 15) {
@@ -15,7 +15,7 @@ export const DisplayLetter = () => {
       }
       setCurrentIndex((prevIndex) => prevIndex + 1)
       setLetter(string[currentIndex])
-    }, 2000)
+    }, 3000)
 
     // cleanup the interval
     return () => {
@@ -23,5 +23,17 @@ export const DisplayLetter = () => {
     }
   }, [currentIndex, string])
 
-  return <p className="text-center text-10xl font-bold text-white">{letter}</p>
+  return (
+    <p className="text-center text-10xl font-bold text-white">
+      {currentIndex === 0 ? (
+        <p className="text-5xl text-white">GET READY...</p>
+      ) : null}
+
+      {letter}
+
+      {currentIndex > 15 ? (
+        <p className="text-5xl text-white">GAME OVER!</p>
+      ) : null}
+    </p>
+  )
 }

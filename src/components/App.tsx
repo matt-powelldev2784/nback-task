@@ -12,7 +12,6 @@ function App() {
       />
       <div className="mt-12 size-full h-[300px] max-w-[800px] bg-gray-900 flexCol">
         <DisplayLetter />
-        {/* <p className="text-10xl text-white">A</p> */}
       </div>
     </div>
   )
