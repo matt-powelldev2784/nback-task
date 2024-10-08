@@ -1,12 +1,10 @@
-import { get15LetterString } from 'utils/get15LetterString'
+import './index.css'
+import { DisplayLetter } from './displayLetter/DisplayLetter'
 
 function App() {
-  const random15Letters = get15LetterString()
-  console.log('random15Letters', random15Letters)
-
   return (
-    <div className="relative overflow-hidden bg-white">
-      <p>test</p>
+    <div className="relative w-full overflow-hidden bg-white">
+      <DisplayLetter />
     </div>
   )
 }

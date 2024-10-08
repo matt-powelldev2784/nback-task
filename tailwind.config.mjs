@@ -1,9 +1,52 @@
-/** @type {import('tailwindcss').Config} */
-
 export default {
-  content: ['./src/**/*.{mjs,js,ts,jsx,tsx}'],
+  content: ['index.html', './src/**/*.{js,jsx,ts,tsx,vue,html}'],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        primaryBlue: '#356597',
+        lightBlue: '#337bcc'
+      },
+      screens: {
+        sm: '0px',
+        md: '600px',
+        lg: '1100px'
+      },
+      fontFamily: {
+        sans: ['Roboto', 'sans-serif']
+      },
+      fontSize: {
+        xs: ['11px', '16px'],
+        sm: ['14px', '20px'],
+        base: ['18px', '24px'],
+        lg: ['22px', '28px'],
+        xl: ['26px', '32px'],
+        '2xl': ['29px', '36px'],
+        '3xl': ['32px', '42px'],
+        '5xl': ['52px', '64px'],
+        '10xl': ['208px', '256px']
+      }
+    }
   },
-  plugins: []
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.flexCol': {
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          flexWrap: 'wrap',
+          width: '100%'
+        },
+        '.flexRow': {
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          width: '100%'
+        }
+      })
+    }
+  ]
 }
