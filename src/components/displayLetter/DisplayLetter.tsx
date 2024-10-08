@@ -24,7 +24,7 @@ export const DisplayLetter = () => {
   }, [currentIndex, string])
 
   return (
-    <p className="text-center text-10xl font-bold text-white">
+    <p className="p-2 text-center text-10xl font-bold text-white">
       {currentIndex === 0 ? (
         <p className="text-5xl text-white">GET READY...</p>
       ) : null}
