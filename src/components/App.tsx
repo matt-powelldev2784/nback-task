@@ -14,9 +14,9 @@ function App() {
 
       <Home />
 
-      {/* <div className="mt-12 size-full h-[300px] max-w-[800px] bg-gray-900 flexCol">
+      <div className="mt-12 size-full h-[300px] max-w-[800px] bg-gray-900 flexCol">
         <DisplayLetter />
-      </div> */}
+      </div>
     </div>
   )
 }

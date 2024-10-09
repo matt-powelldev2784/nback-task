@@ -25,15 +25,13 @@ export const DisplayLetter = () => {
 
   return (
     <p className="p-2 text-center text-10xl font-bold text-white">
-      {currentIndex === 0 ? (
+      {currentIndex === 0 && (
         <p className="text-5xl text-white">GET READY...</p>
-      ) : null}
+      )}
 
       {letter}
 
-      {currentIndex > 15 ? (
-        <p className="text-5xl text-white">GAME OVER!</p>
-      ) : null}
+      {currentIndex > 15 && <p className="text-5xl text-white">GAME OVER!</p>}
     </p>
   )
 }
