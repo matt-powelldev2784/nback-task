@@ -14,3 +14,8 @@ a {
 button {
   cursor: pointer;
 }
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
