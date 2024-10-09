@@ -6,7 +6,7 @@ export const Home = () => {
 
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-start md:pt-12">
-      {!displayInstructions ? (
+      {!displayInstructions && (
         <>
           <div className="m-4 rounded-3xl bg-white p-2 opacity-100 shadow-lg flexCol sm:w-11/12 md:max-w-[700px] md:px-20 md:py-8">
             <img src={two_back_logo} alt="two back logo" className="w-full" />
@@ -23,9 +23,9 @@ export const Home = () => {
             Start Game
           </button>
         </>
-      ) : null}
+      )}
 
-      {displayInstructions ? (
+      {displayInstructions && (
         <div className="m-4 mb-12 max-w-[800px] gap-4 rounded-3xl bg-neutral-600 p-6 text-white shadow-lg flexCol sm:w-11/12 sm:text-sm md:px-12 md:py-8 md:text-base">
           <p className="w-full text-center text-3xl font-bold tracking-wide text-white">
             Instructions
@@ -70,7 +70,7 @@ export const Home = () => {
             Go back
           </button>
         </div>
-      ) : null}
+      )}
     </div>
   )
 }
