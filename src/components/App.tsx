@@ -9,7 +9,7 @@ function App() {
       <img
         src={puzzle_bg}
         alt="hero"
-        className="absolute z-[-1] size-full object-cover"
+        className="absolute z-[-1] size-full object-cover opacity-50"
       />
 
       <Home />
