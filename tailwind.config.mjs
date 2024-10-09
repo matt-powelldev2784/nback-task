@@ -11,19 +11,21 @@ export default {
         md: '600px',
         lg: '1100px'
       },
-      fontFamily: {
-        sans: ['Roboto', 'sans-serif']
-      },
       fontSize: {
-        xs: ['11px', '16px'],
-        sm: ['14px', '20px'],
-        base: ['18px', '24px'],
-        lg: ['22px', '28px'],
-        xl: ['26px', '32px'],
-        '2xl': ['29px', '36px'],
-        '3xl': ['32px', '42px'],
-        '5xl': ['52px', '64px'],
-        '10xl': ['208px', '256px']
+        xs: ['12px', '18px'],
+        sm: ['15px', '21px'],
+        base: ['18px', '28px'],
+        lg: ['18px', '28px'],
+        xl: ['20px', '28px'],
+        '2xl': ['24px', '32px'],
+        '3xl': ['30px', '36px'],
+        '4xl': ['36px', '40px'],
+        '5xl': ['48px', '52px'],
+        '6xl': ['60px', '64px'],
+        '7xl': ['72px', '80px'],
+        '8xl': ['96px', '104px'],
+        '9xl': ['128px', '136px'],
+        '10xl': ['160px', '168px']
       }
     }
   },

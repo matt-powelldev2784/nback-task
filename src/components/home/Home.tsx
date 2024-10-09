@@ -26,7 +26,7 @@ export const Home = () => {
       ) : null}
 
       {displayInstructions ? (
-        <div className="m-4 max-w-[800px] gap-4 rounded-3xl bg-neutral-600 p-6 text-lg text-white shadow-lg flexCol  sm:w-11/12 md:px-20 md:py-8">
+        <div className="m-4 mb-12 max-w-[800px] gap-4 rounded-3xl bg-neutral-600 p-6 text-white shadow-lg flexCol sm:w-11/12 sm:text-sm md:px-12 md:py-8 md:text-base">
           <p className="w-full text-center text-3xl font-bold tracking-wide text-white">
             Instructions
           </p>
@@ -45,7 +45,7 @@ export const Home = () => {
             <strong>Your Task:</strong>
             <br />
             Decide if the current letter is the same as the one shown two
-            letters ago (N-2-back task).
+            letters ago.
           </p>
 
           <p className="w-full text-center text-white">
@@ -59,13 +59,13 @@ export const Home = () => {
           <p className="w-full text-center text-white">
             <strong>Incorrect Response:</strong>
             <br />
-            If it’s not the same, do not press any key. Pressing the “space-bar”
-            key incorrectly will show red around the letter.
+            If it’s not the same, do not press anything. Incorrect responses
+            will be shown with red colors around the letter.
           </p>
 
           <button
             onClick={() => setDisplayInstructions(false)}
-            className="mt-8 w-96 max-w-full rounded-xl bg-neutral-400 text-xl tracking-wide text-white sm:p-2 md:p-4"
+            className="mt-8 max-w-full rounded-xl bg-neutral-500 text-xl tracking-wide text-white sm:w-11/12 sm:p-2 md:w-96 md:p-4"
           >
             Go back
           </button>
