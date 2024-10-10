@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { get15LetterString } from 'utils/get15LetterString'
 
-export const DisplayLetter = () => {
+export const Game = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [letter, setLetter] = useState('')
   const string = useMemo(() => get15LetterString(), [])

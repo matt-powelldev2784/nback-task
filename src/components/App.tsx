@@ -1,5 +1,5 @@
 import './index.css'
-import { DisplayLetter } from './displayLetter/DisplayLetter'
+import { Game } from './game/Gamne'
 import puzzle_bg from '../assets/puzzle_simple_plus1.svg'
 import { Home } from './home/Home'
 import { useState } from 'react'
@@ -17,7 +17,7 @@ function App() {
 
       {!isGameStarted && <Home setIsGameStarted={setIsGameStarted} />}
 
-      {isGameStarted && <DisplayLetter />}
+      {isGameStarted && <Game />}
     </div>
   )
 }
