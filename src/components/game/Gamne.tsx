@@ -1,27 +1,7 @@
-import { useEffect, useMemo, useState } from 'react'
-import { get15LetterString } from 'utils/get15LetterString'
+import useGameTimer from './hooks/useGamerTimer'
 
 export const Game = () => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [letter, setLetter] = useState('')
-  const string = useMemo(() => get15LetterString(), [])
-
-  // display a letter every 3 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (currentIndex > 15) {
-        clearInterval(interval)
-        return
-      }
-      setCurrentIndex((prevIndex) => prevIndex + 1)
-      setLetter(string[currentIndex])
-    }, 3000)
-
-    // cleanup the interval
-    return () => {
-      clearInterval(interval)
-    }
-  }, [currentIndex, string])
+  const { currentIndex, letter } = useGameTimer()
 
   return (
     <div className="mt-16 size-full h-[300px] max-w-[800px] bg-gray-900 flexCol sm:mt-4">
