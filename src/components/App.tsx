@@ -19,7 +19,9 @@ function App() {
 
       {currentScreen === 'home' && <Home setCurrentScreen={setCurrentScreen} />}
 
-      {currentScreen === 'enterName' && <EnterName />}
+      {currentScreen === 'enterName' && (
+        <EnterName setCurrentScreen={setCurrentScreen} />
+      )}
 
       {currentScreen === 'game' && <Game />}
     </div>
