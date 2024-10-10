@@ -4,7 +4,7 @@ export const Game = () => {
   const { currentIndex, letter } = useGameTimer()
 
   return (
-    <div className="mt-16 size-full h-[300px] max-w-[800px] bg-gray-900 flexCol sm:mt-4">
+    <div className="size-full h-[300px] max-w-[800px] bg-gray-900 flexCol sm:mt-4 md:mt-16">
       {currentIndex === 0 && (
         <p className="text-5xl text-white">GET READY...</p>
       )}
