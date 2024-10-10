@@ -1,7 +1,11 @@
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 import two_back_logo from '../../assets/two_back_logo.svg'
 
-export const Home = () => {
+interface HomeProps {
+  setIsGameStarted: Dispatch<SetStateAction<boolean>>
+}
+
+export const Home = ({ setIsGameStarted }: HomeProps) => {
   const [displayInstructions, setDisplayInstructions] = useState(false)
 
   return (
@@ -19,7 +23,10 @@ export const Home = () => {
             Instructions
           </button>
 
-          <button className="mt-8 max-w-full rounded-xl bg-blue-800 text-xl tracking-wide text-white sm:w-11/12 sm:p-2 md:w-96 md:p-4">
+          <button
+            onClick={() => setIsGameStarted(true)}
+            className="mt-8 max-w-full rounded-xl bg-blue-800 text-xl tracking-wide text-white sm:w-11/12 sm:p-2 md:w-96 md:p-4"
+          >
             Start Game
           </button>
         </>
