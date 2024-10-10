@@ -24,7 +24,7 @@ export const Game = () => {
   }, [currentIndex, string])
 
   return (
-    <div className="mt-12 size-full h-[300px] max-w-[800px] bg-gray-900 flexCol">
+    <div className="mt-16 size-full h-[300px] max-w-[800px] bg-gray-900 flexCol sm:mt-4">
       {currentIndex === 0 && (
         <p className="text-5xl text-white">GET READY...</p>
       )}
