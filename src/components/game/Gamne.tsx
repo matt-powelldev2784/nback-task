@@ -1,14 +1,13 @@
 import useGameTimer from './hooks/useGamerTimer'
-import useSpacebar from './hooks/useSpacerBar'
+import useCheckLetterMatch from './hooks/useCheckLetterMatch'
 
 export const Game = () => {
-  const { currentIndex, currentLetter } = useGameTimer()
+  const { currentIndex, currentLetter, string } = useGameTimer()
 
-  useSpacebar({
-    callback: () => {
-      console.log('Space bar pressed, current letter:', currentLetter)
-    },
-    currentLetter
+  const { userHadRepsonded, isCorrectResponse } = useCheckLetterMatch({
+    currentLetter,
+    currentString: string,
+    currentIndex
   })
 
   return (
@@ -17,9 +16,23 @@ export const Game = () => {
         <p className="text-5xl text-white">GET READY...</p>
       )}
 
-      <p className="p-2 text-center text-10xl font-bold text-white">
-        {currentLetter}
-      </p>
+      {!userHadRepsonded ? (
+        <p className={`p-2 text-center text-10xl font-bold text-white`}>
+          {currentLetter}
+        </p>
+      ) : null}
+
+      {userHadRepsonded && isCorrectResponse && (
+        <p className={`p-2 text-center text-10xl font-bold text-green-500`}>
+          {currentLetter}
+        </p>
+      )}
+
+      {userHadRepsonded && !isCorrectResponse && (
+        <p className={`p-2 text-center text-10xl font-bold text-red-500`}>
+          {currentLetter}
+        </p>
+      )}
 
       {currentIndex > 15 && <p className="text-5xl text-white">GAME OVER!</p>}
     </div>
