@@ -1,14 +1,21 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 interface UseSpaceBarProps {
   callback: () => void
+  currentLetter: string
 }
 
-const useSpacebar = ({ callback }: UseSpaceBarProps) => {
+const useSpacebar = ({ callback, currentLetter }: UseSpaceBarProps) => {
+  // used to prevent multiple presses on the same letter
+  const [lastLetterPressed, setLastLetterPressed] = useState('')
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.code === 'Space') {
+      if (event.code !== 'Space') return
+
+      if (currentLetter !== lastLetterPressed) {
         callback()
+        setLastLetterPressed(currentLetter)
       }
     }
 
@@ -18,7 +25,7 @@ const useSpacebar = ({ callback }: UseSpaceBarProps) => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [callback])
+  }, [callback, currentLetter, lastLetterPressed])
 }
 
 export default useSpacebar

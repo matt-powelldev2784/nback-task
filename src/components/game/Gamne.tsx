@@ -7,7 +7,8 @@ export const Game = () => {
   useSpacebar({
     callback: () => {
       console.log('Space bar pressed, current letter:', currentLetter)
-    }
+    },
+    currentLetter
   })
 
   return (
