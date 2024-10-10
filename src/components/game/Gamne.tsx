@@ -1,7 +1,7 @@
 import useGameTimer from './hooks/useGamerTimer'
 
 export const Game = () => {
-  const { currentIndex, letter } = useGameTimer()
+  const { currentIndex, currentLetter } = useGameTimer()
 
   return (
     <div className="size-full h-[300px] max-w-[800px] bg-gray-900 flexCol sm:mt-4 md:mt-16">
@@ -9,7 +9,9 @@ export const Game = () => {
         <p className="text-5xl text-white">GET READY...</p>
       )}
 
-      <p className="p-2 text-center text-10xl font-bold text-white">{letter}</p>
+      <p className="p-2 text-center text-10xl font-bold text-white">
+        {currentLetter}
+      </p>
 
       {currentIndex > 15 && <p className="text-5xl text-white">GAME OVER!</p>}
     </div>

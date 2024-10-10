@@ -3,7 +3,7 @@ import { get15LetterString } from 'utils/get15LetterString'
 
 const useGameTimer = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [letter, setLetter] = useState('')
+  const [currentLetter, setCurrentLetter] = useState('')
   const string = useMemo(() => get15LetterString(), [])
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const useGameTimer = () => {
         return
       }
       setCurrentIndex((prevIndex) => prevIndex + 1)
-      setLetter(string[currentIndex])
+      setCurrentLetter(string[currentIndex])
     }, 3000)
 
     // Cleanup the interval
@@ -23,7 +23,7 @@ const useGameTimer = () => {
     }
   }, [currentIndex, string])
 
-  return { currentIndex, letter }
+  return { currentIndex, currentLetter }
 }
 
 export default useGameTimer
