@@ -4,7 +4,7 @@ import puzzle_bg from '../assets/puzzle_simple_plus1.svg'
 import { Home } from './home/Home'
 import { useState } from 'react'
 import { screenT } from 'types/screenT'
-import { EnterName } from './enterName/enterName'
+import { EnterName } from './enterName/EnterName'
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState<screenT>('home')
