@@ -1,11 +1,12 @@
 import { Dispatch, SetStateAction, useState } from 'react'
 import two_back_logo from '../../assets/two_back_logo.svg'
+import { screenT } from 'types/screenT'
 
 interface HomeProps {
-  setIsGameStarted: Dispatch<SetStateAction<boolean>>
+  setCurrentScreen: Dispatch<SetStateAction<screenT>>
 }
 
-export const Home = ({ setIsGameStarted }: HomeProps) => {
+export const Home = ({ setCurrentScreen }: HomeProps) => {
   const [displayInstructions, setDisplayInstructions] = useState(false)
 
   return (
@@ -24,7 +25,7 @@ export const Home = ({ setIsGameStarted }: HomeProps) => {
           </button>
 
           <button
-            onClick={() => setIsGameStarted(true)}
+            onClick={() => setCurrentScreen('enterName')}
             className="mt-8 max-w-full rounded-xl bg-blue-800 text-xl tracking-wide text-white sm:w-11/12 sm:p-2 md:w-96 md:p-4"
           >
             Start Game
