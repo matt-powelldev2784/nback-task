@@ -1,5 +1,6 @@
 import useGameTimer from './hooks/useGamerTimer'
 import useCheckLetterMatch from './hooks/useCheckLetterMatch'
+import { generateTextColorClasses } from './utils/generateTextColorClasses'
 
 export const Game = () => {
   const { currentIndex, currentLetter, string } = useGameTimer()
@@ -10,31 +11,24 @@ export const Game = () => {
     currentIndex
   })
 
+  // generate the color of the text based on the user's response
+  // white text for no response yet
+  // green text for correct response
+  // red text for incorrect response
+  const letterColorClasses = generateTextColorClasses({
+    userHadRepsonded,
+    isCorrectResponse
+  })
+
   return (
     <div className="size-full h-[300px] max-w-[800px] bg-gray-900 flexCol sm:mt-4 md:mt-16">
       {currentIndex === 0 && (
         <p className="text-5xl text-white">GET READY...</p>
       )}
 
-      {!userHadRepsonded ? (
-        <p className={`p-2 text-center text-10xl font-bold text-white`}>
-          {currentLetter}
-        </p>
-      ) : null}
-
-      {userHadRepsonded && isCorrectResponse && (
-        <p className={`p-2 text-center text-10xl font-bold text-green-500`}>
-          {currentLetter}
-        </p>
-      )}
-
-      {userHadRepsonded && !isCorrectResponse && (
-        <p className={`p-2 text-center text-10xl font-bold text-red-500`}>
-          {currentLetter}
-        </p>
-      )}
+      <p className={letterColorClasses}>{currentLetter}</p>
 
       {currentIndex > 15 && <p className="text-5xl text-white">GAME OVER!</p>}
     </div>
-  )
+  ) /* ------------------------------------------------------------------------- */
 }
