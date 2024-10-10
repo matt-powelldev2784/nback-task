@@ -11,8 +11,6 @@ export const generateTextColorClasses = ({
 }: GenerateLetterClassesProps) => {
   const baseClass = 'p-2 text-center text-10xl font-bold'
 
-  console.log(baseClass + 'text-green-500')
-
   // grren text for correct response
   if (userHadRepsonded && isCorrectResponse) {
     return `${baseClass} text-green-500`
