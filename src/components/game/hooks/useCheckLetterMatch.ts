@@ -15,7 +15,6 @@ const useCheckLetterMatch = ({
   currentString,
   currentIndex
 }: UseSpaceBarProps) => {
-  const [lastLetterPressed, setLastLetterPressed] = useState('') // used to prevent multiple presses on the same letter
   const [userHadRepsonded, setUserHadRepsonded] = useState(false)
   const [isCorrectResponse, setIsCorrectResponse] = useState<boolean>(false)
 
@@ -24,15 +23,12 @@ const useCheckLetterMatch = ({
       // only respond to space bar key presses
       if (event.code !== 'Space') return
 
-      // Prevent user from making a response if the game is not is progress
+      // Prevent user from making a response if the game is not in progress
       if (currentIndex === 0) return
       if (currentIndex > 15) return
 
-      // Prevent multiple presses on the same letter by storing the last letter pressed
+      // Prevent multiple presses on the same letter
       if (userHadRepsonded) return
-      if (currentLetter !== lastLetterPressed) {
-        setLastLetterPressed(currentLetter)
-      }
 
       // handle correct user response
       if (currentLetter === currentString[currentIndex - 3]) {
@@ -57,13 +53,7 @@ const useCheckLetterMatch = ({
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [
-    currentLetter,
-    lastLetterPressed,
-    currentIndex,
-    currentString,
-    userHadRepsonded
-  ])
+  }, [currentLetter, currentIndex, currentString, userHadRepsonded])
 
   // Reset isCorrectResponse and userHadRepsonded when currentLetter changes
   useEffect(() => {
