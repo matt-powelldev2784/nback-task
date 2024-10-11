@@ -20,15 +20,31 @@ export const Game = () => {
     isCorrectResponse
   })
 
+  // This is used to simulate the user pressing the space bar
+  // on touch devices
+  const dispatchSpaceBarEvent = () => {
+    const event = new KeyboardEvent('keydown', { code: 'Space', key: ' ' })
+    window.dispatchEvent(event)
+  }
+
   return (
-    <div className="size-full h-[300px] max-w-[800px] bg-gray-900 flexCol sm:mt-4 md:mt-16">
-      {currentIndex === 0 && (
-        <p className="text-5xl text-white">GET READY...</p>
-      )}
+    <div className="size-full flexCol">
+      <div className="size-full h-[300px] max-w-[800px] bg-gray-900 flexCol sm:mt-4 md:mt-16">
+        {currentIndex === 0 && (
+          <p className="text-5xl text-white">GET READY...</p>
+        )}
 
-      <p className={letterColorClasses}>{currentLetter}</p>
+        <p className={letterColorClasses}>{currentLetter}</p>
 
-      {currentIndex > 15 && <p className="text-5xl text-white">GAME OVER!</p>}
+        {currentIndex > 15 && <p className="text-5xl text-white">GAME OVER!</p>}
+      </div>
+
+      <button
+        onClick={dispatchSpaceBarEvent}
+        className="my-2 mt-12 max-w-full rounded-xl bg-blue-800 text-xl tracking-wide text-white sm:w-11/12 sm:p-2 md:w-96 md:p-4"
+      >
+        Repeated Letter
+      </button>
     </div>
-  ) /* ------------------------------------------------------------------------- */
+  )
 }
