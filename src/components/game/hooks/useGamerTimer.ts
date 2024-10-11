@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { addLogToLocalStorage } from 'utils/addLogToLocalStorage'
 import { get15LetterString } from 'utils/get15LetterString'
 
 const useGameTimer = () => {
@@ -11,6 +12,7 @@ const useGameTimer = () => {
     const interval = setInterval(() => {
       if (currentIndex > 15) {
         clearInterval(interval)
+        addLogToLocalStorage({ type: 'endGame' })
         return
       }
       setCurrentIndex((prevIndex) => prevIndex + 1)
