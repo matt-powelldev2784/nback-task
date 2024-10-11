@@ -9,7 +9,7 @@ export const generateTextColorClasses = ({
   userHadRepsonded,
   isCorrectResponse
 }: GenerateLetterClassesProps) => {
-  const baseClass = 'p-2 text-center text-10xl font-bold'
+  const baseClass = 'p-2 text-center text-10xl font-bold mb-5'
 
   // grren text for correct response
   if (userHadRepsonded && isCorrectResponse) {

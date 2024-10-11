@@ -3,6 +3,12 @@ import * as Yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Dispatch, SetStateAction } from 'react'
 import { screenT } from 'types/screenT'
+import Button from 'components/ui/button/Button'
+import {
+  addLogToLocalStorage,
+  addNameToStorage,
+  clearLogsFromStorage
+} from 'utils/addLogToLocalStorage'
 
 type Inputs = {
   name: string
@@ -30,7 +36,9 @@ export const EnterName = ({ setCurrentScreen }: EnterNameProps) => {
   })
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log('data', data)
+    clearLogsFromStorage()
+    addNameToStorage(data.name)
+    addLogToLocalStorage({ type: 'startGame' })
     setCurrentScreen('game')
     reset() // reset form
   }
@@ -53,12 +61,11 @@ export const EnterName = ({ setCurrentScreen }: EnterNameProps) => {
         {errors.name ? errors.name.message : null}
       </span>
 
-      <button
+      <Button
+        classNames="max-w-full rounded-xl bg-blue-800 text-xl tracking-wide text-white active:opacity-90 sm:w-11/12 sm:p-2 md:w-96 md:p-4"
+        text="Submit"
         type="submit"
-        className="max-w-full rounded-xl bg-blue-800 text-xl tracking-wide text-white sm:w-11/12 sm:p-2 md:w-96 md:p-4"
-      >
-        Submit
-      </button>
+      />
     </form>
   )
 }
