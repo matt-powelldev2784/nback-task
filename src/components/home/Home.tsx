@@ -20,14 +20,14 @@ export const Home = ({ setCurrentScreen }: HomeProps) => {
           <div className="flexCol sm:mt-2 md:mt-12">
             <button
               onClick={() => setDisplayInstructions(true)}
-              className="my-2 max-w-full rounded-xl bg-neutral-500 text-xl tracking-wide text-white sm:w-11/12 sm:p-2 md:w-96 md:p-4"
+              className="my-2 max-w-full rounded-xl bg-neutral-500 text-xl tracking-wide text-white active:opacity-90 sm:w-11/12 sm:p-2 md:w-96 md:p-4"
             >
               Instructions
             </button>
 
             <button
               onClick={() => setCurrentScreen('enterName')}
-              className="my-2 max-w-full rounded-xl bg-blue-800 text-xl tracking-wide text-white sm:w-11/12 sm:p-2 md:w-96 md:p-4"
+              className="my-2 max-w-full rounded-xl bg-blue-800 text-xl tracking-wide text-white active:opacity-90 sm:w-11/12 sm:p-2 md:w-96 md:p-4"
             >
               Start Game
             </button>
@@ -75,7 +75,7 @@ export const Home = ({ setCurrentScreen }: HomeProps) => {
 
           <button
             onClick={() => setDisplayInstructions(false)}
-            className="mt-8 max-w-full rounded-xl bg-neutral-500 text-xl tracking-wide text-white sm:w-11/12 sm:p-2 md:w-96 md:p-4"
+            className="mt-8 max-w-full rounded-xl bg-neutral-500 text-xl tracking-wide text-white active:opacity-90 sm:w-11/12 sm:p-2 md:w-96 md:p-4"
           >
             Go back
           </button>

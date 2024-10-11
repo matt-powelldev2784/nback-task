@@ -55,7 +55,7 @@ export const EnterName = ({ setCurrentScreen }: EnterNameProps) => {
 
       <button
         type="submit"
-        className="max-w-full rounded-xl bg-blue-800 text-xl tracking-wide text-white sm:w-11/12 sm:p-2 md:w-96 md:p-4"
+        className="max-w-full rounded-xl bg-blue-800 text-xl tracking-wide text-white active:opacity-90 sm:w-11/12 sm:p-2 md:w-96 md:p-4"
       >
         Submit
       </button>
