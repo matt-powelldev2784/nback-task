@@ -10,7 +10,7 @@ function App() {
   const [currentScreen, setCurrentScreen] = useState<screenT>('home')
 
   return (
-    <div className="relative flex min-h-lvh w-screen flex-col items-center">
+    <div className="relative flex min-h-lvh w-screen flex-col items-center overflow-hidden">
       <img
         src={puzzle_bg}
         alt="hero"
