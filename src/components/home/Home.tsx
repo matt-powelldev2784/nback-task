@@ -62,7 +62,7 @@ export const Home = ({ setCurrentScreen }: HomeProps) => {
             <strong>Correct Response:</strong>
             <br />
             If it is the same, press the &ldquo;space-bar&rdquo; key or
-            click/touch the &ldquo;Repeated Letter Button&rdquo;. You&rsquo;ll
+            click/touch the &ldquo;Repeated Letter&rdquo; button. You&rsquo;ll
             see green colors around the letter if you are correct.
           </p>
 
