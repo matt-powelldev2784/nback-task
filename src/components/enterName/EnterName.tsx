@@ -4,6 +4,10 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { Dispatch, SetStateAction } from 'react'
 import { screenT } from 'types/screenT'
 import Button from 'components/ui/button/Button'
+import {
+  addNameToStorage,
+  clearLogsFromStorage
+} from 'utils/addLogToLocalStorage'
 
 type Inputs = {
   name: string
@@ -31,7 +35,8 @@ export const EnterName = ({ setCurrentScreen }: EnterNameProps) => {
   })
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log('data', data)
+    clearLogsFromStorage()
+    addNameToStorage(data.name)
     setCurrentScreen('game')
     reset() // reset form
   }
