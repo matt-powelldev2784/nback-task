@@ -5,6 +5,7 @@ import { Dispatch, SetStateAction } from 'react'
 import { screenT } from 'types/screenT'
 import Button from 'components/ui/button/Button'
 import {
+  addLogToLocalStorage,
   addNameToStorage,
   clearLogsFromStorage
 } from 'utils/addLogToLocalStorage'
@@ -37,6 +38,7 @@ export const EnterName = ({ setCurrentScreen }: EnterNameProps) => {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     clearLogsFromStorage()
     addNameToStorage(data.name)
+    addLogToLocalStorage({ type: 'startGame' })
     setCurrentScreen('game')
     reset() // reset form
   }

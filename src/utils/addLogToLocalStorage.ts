@@ -7,11 +7,19 @@ interface Log {
   correctAnswer?: boolean
 }
 
+interface addLogToLocalStorageProps {
+  type: LogType
+  correctAnswer?: boolean
+}
+
 export const addNameToStorage = (name: string) => {
   localStorage.setItem('name', name)
 }
 
-export const addLogToLocalStorage = ({ type, correctAnswer }: Log) => {
+export const addLogToLocalStorage = ({
+  type,
+  correctAnswer
+}: addLogToLocalStorageProps) => {
   const storedName = localStorage.getItem('name')
 
   const log: Log = {
