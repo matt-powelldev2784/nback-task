@@ -35,7 +35,9 @@ export const Game = () => {
           <p className="text-5xl text-white">GET READY...</p>
         )}
 
-        <p className={letterColorClasses}>{currentLetter}</p>
+        {currentIndex > 1 && currentIndex < 15 && (
+          <p className={letterColorClasses}>{currentLetter}</p>
+        )}
 
         {currentIndex > 15 && <p className="text-5xl text-white">GAME OVER!</p>}
       </div>
