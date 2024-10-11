@@ -29,3 +29,9 @@ Implement testing with Vitest and React Testing Library.
 * Create repo on github with README.md and instruction to get started
 * Deploy on Amazon S3
 
+logs:
+type - startGame, name, repeatedLetter, endGame
+date - timestamp
+details - name, correct, error
+
+

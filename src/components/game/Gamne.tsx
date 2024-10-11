@@ -1,6 +1,7 @@
 import useGameTimer from './hooks/useGamerTimer'
 import useCheckLetterMatch from './hooks/useCheckLetterMatch'
 import { generateTextColorClasses } from './utils/generateTextColorClasses'
+import Button from 'components/ui/button/Button'
 
 export const Game = () => {
   const { currentIndex, currentLetter, string } = useGameTimer()
@@ -39,12 +40,11 @@ export const Game = () => {
         {currentIndex > 15 && <p className="text-5xl text-white">GAME OVER!</p>}
       </div>
 
-      <button
+      <Button
+        classNames="my-2 max-w-full rounded-xl bg-blue-800 text-xl tracking-wide text-white active:opacity-90 sm:mt-6 sm:w-11/12 sm:p-2 md:mt-12 md:w-96 md:p-4"
+        text="Repeated Letter"
         onClick={dispatchSpaceBarEvent}
-        className="my-2 max-w-full rounded-xl bg-blue-800 text-xl tracking-wide text-white active:opacity-90 sm:mt-6 sm:w-11/12 sm:p-2 md:mt-12 md:w-96 md:p-4"
-      >
-        Repeated Letter
-      </button>
+      />
 
       <div className="m-4 mb-12 max-w-[800px] gap-4 rounded-3xl bg-neutral-600 text-white shadow-lg flexCol sm:w-11/12 sm:p-4 sm:text-sm md:px-12 md:py-8 md:text-base">
         <p className="text-center text-white sm:text-sm md:text-lg">

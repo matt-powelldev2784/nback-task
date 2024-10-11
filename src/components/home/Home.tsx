@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction, useState } from 'react'
 import two_back_logo from '../../assets/two_back_logo.svg'
 import { screenT } from 'types/screenT'
+import Button from 'components/ui/button/Button'
 
 interface HomeProps {
   setCurrentScreen: Dispatch<SetStateAction<screenT>>
@@ -18,19 +19,17 @@ export const Home = ({ setCurrentScreen }: HomeProps) => {
           </div>
 
           <div className="flexCol sm:mt-2 md:mt-12">
-            <button
+            <Button
+              classNames="my-2 max-w-full rounded-xl bg-neutral-500 text-xl tracking-wide text-white active:opacity-90 sm:w-11/12 sm:p-2 md:w-96 md:p-4"
+              text="Instructions"
               onClick={() => setDisplayInstructions(true)}
-              className="my-2 max-w-full rounded-xl bg-neutral-500 text-xl tracking-wide text-white active:opacity-90 sm:w-11/12 sm:p-2 md:w-96 md:p-4"
-            >
-              Instructions
-            </button>
+            />
 
-            <button
+            <Button
+              classNames="my-2 max-w-full rounded-xl bg-blue-800 text-xl tracking-wide text-white active:opacity-90 sm:w-11/12 sm:p-2 md:w-96 md:p-4"
+              text="Start Game"
               onClick={() => setCurrentScreen('enterName')}
-              className="my-2 max-w-full rounded-xl bg-blue-800 text-xl tracking-wide text-white active:opacity-90 sm:w-11/12 sm:p-2 md:w-96 md:p-4"
-            >
-              Start Game
-            </button>
+            />
           </div>
         </>
       )}
@@ -73,12 +72,11 @@ export const Home = ({ setCurrentScreen }: HomeProps) => {
             will be shown with red colors around the letter.
           </p>
 
-          <button
+          <Button
+            classNames="mt-8 max-w-full rounded-xl bg-neutral-500 text-xl tracking-wide text-white active:opacity-90 sm:w-11/12 sm:p-2 md:w-96 md:p-4"
+            text="Go back"
             onClick={() => setDisplayInstructions(false)}
-            className="mt-8 max-w-full rounded-xl bg-neutral-500 text-xl tracking-wide text-white active:opacity-90 sm:w-11/12 sm:p-2 md:w-96 md:p-4"
-          >
-            Go back
-          </button>
+          />
         </div>
       )}
     </div>
