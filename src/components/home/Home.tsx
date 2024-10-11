@@ -11,7 +11,7 @@ export const Home = ({ setCurrentScreen }: HomeProps) => {
   const [displayInstructions, setDisplayInstructions] = useState(false)
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-start md:pt-12">
+    <section className="flex min-h-screen w-full flex-col items-center justify-start md:pt-12">
       {!displayInstructions && (
         <>
           <div className="m-4 rounded-3xl bg-white p-2 opacity-100 shadow-lg flexCol sm:w-11/12 md:max-w-[700px] md:px-20 md:py-8">
@@ -79,6 +79,6 @@ export const Home = ({ setCurrentScreen }: HomeProps) => {
           />
         </div>
       )}
-    </div>
+    </section>
   )
 }
