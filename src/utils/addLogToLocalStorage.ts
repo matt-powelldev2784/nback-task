@@ -7,7 +7,7 @@ interface Log {
   correctAnswer?: boolean
 }
 
-export const addNNameToStorage = (name: string) => {
+export const addNameToStorage = (name: string) => {
   localStorage.setItem('name', name)
 }
 
@@ -25,4 +25,9 @@ export const addLogToLocalStorage = ({ type, correctAnswer }: Log) => {
   const updatedLogs = [...existingLogs, log]
 
   localStorage.setItem('logs', JSON.stringify(updatedLogs))
+}
+
+export const clearLogsFromStorage = () => {
+  localStorage.removeItem('logs')
+  localStorage.removeItem('name')
 }
