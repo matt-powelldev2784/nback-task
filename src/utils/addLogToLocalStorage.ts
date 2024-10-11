@@ -12,8 +12,17 @@ interface addLogToLocalStorageProps {
   correctAnswer?: boolean
 }
 
+export const clearLogsFromStorage = () => {
+  localStorage.removeItem('logs')
+  localStorage.removeItem('name')
+  localStorage.removeItem('correctAnswerCount')
+  localStorage.removeItem('incorrectAnswerCount')
+}
+
 export const addNameToStorage = (name: string) => {
   localStorage.setItem('name', name)
+  localStorage.setItem('correctAnswerCount', '0')
+  localStorage.setItem('incorrectAnswerCount', '0')
 }
 
 export const addLogToLocalStorage = ({
@@ -35,7 +44,26 @@ export const addLogToLocalStorage = ({
   localStorage.setItem('logs', JSON.stringify(updatedLogs))
 }
 
-export const clearLogsFromStorage = () => {
-  localStorage.removeItem('logs')
-  localStorage.removeItem('name')
+export const storeAnswerCount = (isResponseCorrect: boolean) => {
+  if (isResponseCorrect) {
+    const correctAnswersCount =
+      localStorage.getItem('correctAnswerCount') || '0'
+    const updatedCorrectAnswerCount = parseInt(correctAnswersCount) + 1
+
+    localStorage.setItem(
+      'correctAnswerCount',
+      updatedCorrectAnswerCount.toString()
+    )
+  }
+
+  if (!isResponseCorrect) {
+    const incorrectAnswerCount =
+      localStorage.getItem('incorrectAnswerCount') || '0'
+    const updatedIncorrectAnswerCount = parseInt(incorrectAnswerCount) + 1
+
+    localStorage.setItem(
+      'incorrectAnswerCount',
+      updatedIncorrectAnswerCount.toString()
+    )
+  }
 }

@@ -15,7 +15,7 @@ const useGameTimer = () => {
       }
       setCurrentIndex((prevIndex) => prevIndex + 1)
       setCurrentLetter(string[currentIndex])
-    }, 3000)
+    }, 2200)
 
     // Cleanup the interval
     return () => {
