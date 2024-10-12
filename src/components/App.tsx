@@ -26,7 +26,9 @@ function App() {
 
       {currentScreen === 'game' && <Game setCurrentScreen={setCurrentScreen} />}
 
-      {currentScreen === 'results' && <Results />}
+      {currentScreen === 'results' && (
+        <Results setCurrentScreen={setCurrentScreen} />
+      )}
     </main>
   )
 }
