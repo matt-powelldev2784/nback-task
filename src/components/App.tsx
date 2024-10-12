@@ -23,7 +23,7 @@ function App() {
         <EnterName setCurrentScreen={setCurrentScreen} />
       )}
 
-      {currentScreen === 'game' && <Game />}
+      {currentScreen === 'game' && <Game setCurrentScreen={setCurrentScreen} />}
     </main>
   )
 }
