@@ -25,7 +25,7 @@ const useGameTimer = () => {
     }
   }, [currentIndex, string])
 
-  return { currentIndex, currentLetter, string }
+  return { currentIndex, currentLetter, string, setCurrentIndex }
 }
 
 export default useGameTimer

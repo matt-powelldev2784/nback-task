@@ -5,6 +5,7 @@ import { Home } from './home/Home'
 import { useState } from 'react'
 import { screenT } from 'types/screenT'
 import { EnterName } from './enterName/EnterName'
+import { Results } from './results/Results'
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState<screenT>('home')
@@ -23,7 +24,11 @@ function App() {
         <EnterName setCurrentScreen={setCurrentScreen} />
       )}
 
-      {currentScreen === 'game' && <Game />}
+      {currentScreen === 'game' && <Game setCurrentScreen={setCurrentScreen} />}
+
+      {currentScreen === 'results' && (
+        <Results setCurrentScreen={setCurrentScreen} />
+      )}
     </main>
   )
 }

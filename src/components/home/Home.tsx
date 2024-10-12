@@ -61,15 +61,15 @@ export const Home = ({ setCurrentScreen }: HomeProps) => {
             <strong>Correct Response:</strong>
             <br />
             If it is the same, press the &ldquo;space-bar&rdquo; key or
-            click/touch the &ldquo;Repeated Letter&rdquo; button. You&rsquo;ll
-            see green colors around the letter if you are correct.
+            click/touch the &ldquo;Repeated Letter&rdquo; button. The letter
+            will turn green if you are correct.
           </p>
 
           <p className="w-full text-center text-black">
             <strong>Incorrect Response:</strong>
             <br />
-            If it’s not the same, do not press anything. Incorrect responses
-            will be shown with red colors around the letter.
+            If it’s not the same, do not press anything. The letter will turn
+            read if you are incorrect.
           </p>
 
           <Button

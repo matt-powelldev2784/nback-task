@@ -6,8 +6,8 @@ import { screenT } from 'types/screenT'
 import Button from 'components/ui/button/Button'
 import {
   addLogToLocalStorage,
-  addNameToStorage,
-  clearLogsFromStorage
+  initialiseLocalStorage,
+  clearLocalStorage
 } from 'utils/addLogToLocalStorage'
 
 type Inputs = {
@@ -36,8 +36,8 @@ export const EnterName = ({ setCurrentScreen }: EnterNameProps) => {
   })
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    clearLogsFromStorage()
-    addNameToStorage(data.name)
+    clearLocalStorage()
+    initialiseLocalStorage(data.name)
     addLogToLocalStorage({ type: 'startGame' })
     setCurrentScreen('game')
     reset() // reset form
