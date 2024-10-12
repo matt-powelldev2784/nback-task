@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import {
   addLogToLocalStorage,
-  storeAnswerCount
+  addAnswerCountToStorage
 } from 'utils/addLogToLocalStorage'
 
 interface UseSpaceBarProps {
@@ -35,7 +35,7 @@ const useCheckLetterMatch = ({
         setUserHadRepsonded(true)
         setIsCorrectResponse(true)
         addLogToLocalStorage({ type: 'repeatedLetter', correctAnswer: true })
-        storeAnswerCount(true)
+        addAnswerCountToStorage(true)
       }
 
       // handle incorrect user response
@@ -43,7 +43,7 @@ const useCheckLetterMatch = ({
         setUserHadRepsonded(true)
         setIsCorrectResponse(false)
         addLogToLocalStorage({ type: 'repeatedLetter', correctAnswer: false })
-        storeAnswerCount(false)
+        addAnswerCountToStorage(false)
       }
     }
 

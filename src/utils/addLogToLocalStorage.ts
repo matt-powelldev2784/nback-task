@@ -44,7 +44,7 @@ export const addLogToLocalStorage = ({
   localStorage.setItem('logs', JSON.stringify(updatedLogs))
 }
 
-export const storeAnswerCount = (isResponseCorrect: boolean) => {
+export const addAnswerCountToStorage = (isResponseCorrect: boolean) => {
   if (isResponseCorrect) {
     const correctAnswersCount =
       localStorage.getItem('correctAnswerCount') || '0'
