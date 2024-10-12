@@ -12,14 +12,14 @@ interface addLogToLocalStorageProps {
   correctAnswer?: boolean
 }
 
-export const clearLogsFromStorage = () => {
+export const clearLocalStorage = () => {
   localStorage.removeItem('logs')
   localStorage.removeItem('name')
   localStorage.removeItem('correctAnswerCount')
   localStorage.removeItem('incorrectAnswerCount')
 }
 
-export const addNameToStorage = (name: string) => {
+export const initialiseLocalStorage = (name: string) => {
   localStorage.setItem('name', name)
   localStorage.setItem('correctAnswerCount', '0')
   localStorage.setItem('incorrectAnswerCount', '0')
