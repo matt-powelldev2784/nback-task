@@ -1,1 +1,1 @@
-export type screenT = 'home' | 'enterName' | 'game'
+export type screenT = 'home' | 'enterName' | 'game' | 'results'

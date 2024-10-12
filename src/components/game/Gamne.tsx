@@ -60,16 +60,18 @@ export const Game = ({ setCurrentScreen }: GameProps) => {
         <Button
           classNames="my-2 max-w-full rounded-xl bg-green-600 text-xl tracking-wide text-white active:opacity-90 sm:mt-6 sm:w-11/12 sm:p-2 md:mt-12 md:w-96 md:p-4"
           text="View Results"
-          onClick={() => setCurrentScreen('home')}
+          onClick={() => setCurrentScreen('results')}
         />
       )}
 
-      <div className="m-4 mb-12 max-w-[800px] gap-4 rounded-3xl bg-neutral-600 text-white shadow-lg flexCol sm:w-11/12 sm:p-4 sm:text-sm md:px-12 md:py-8 md:text-base">
-        <p className="text-center text-white sm:text-sm md:text-lg">
-          Press the space-bar key, or click/touch the &ldquo;Repeated
-          Letter&rdquo; button when a letter is repeated.
-        </p>
-      </div>
+      {!isGameOver && (
+        <div className="m-4 mb-12 max-w-[800px] gap-4 rounded-3xl bg-neutral-600 text-white shadow-lg flexCol sm:w-11/12 sm:p-4 sm:text-sm md:px-12 md:py-8 md:text-base">
+          <p className="text-center text-white sm:text-sm md:text-lg">
+            Press the space-bar key, or click/touch the &ldquo;Repeated
+            Letter&rdquo; button when a letter is repeated.
+          </p>
+        </div>
+      )}
     </section>
   )
 }
