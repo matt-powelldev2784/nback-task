@@ -11,7 +11,8 @@
 ## Deployed App
 * App deployed on AWS S3.
 * CICD setup using github actions.
-* http://matt-powell-2784-two-back-memory-test-game.s3-website.eu-west-2.amazonaws.com/
+* Deployed app can be accessed at below link:
+http://matt-powell-2784-two-back-memory-test-game.s3-website.eu-west-2.amazonaws.com/
 
 ## My approach
 Build app with Vite, React, TypeScript, TailwindCSS using template form Vite Community.
