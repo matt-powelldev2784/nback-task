@@ -45,20 +45,20 @@ export const Home = ({ setCurrentScreen }: HomeProps) => {
           </p>
 
           <p className="w-full text-center text-black">
-            <strong>Letter Display:</strong>
+            <strong>Letter Display</strong>
             <br />
             You will see letters appear on the screen, one at a time.
           </p>
 
           <p className="w-full text-center text-black">
-            <strong>Your Task:</strong>
+            <strong>Your Task</strong>
             <br />
             Decide if the current letter is the same as the one shown two
             letters ago.
           </p>
 
           <p className="w-full text-center text-black">
-            <strong>Correct Response:</strong>
+            <strong>Correct Response</strong>
             <br />
             If it is the same, press the &ldquo;space-bar&rdquo; key or
             click/touch the &ldquo;Repeated Letter&rdquo; button. The letter
@@ -66,10 +66,17 @@ export const Home = ({ setCurrentScreen }: HomeProps) => {
           </p>
 
           <p className="w-full text-center text-black">
-            <strong>Incorrect Response:</strong>
+            <strong>Incorrect Response</strong>
             <br />
             If it’s not the same, do not press anything. The letter will turn
-            read if you are incorrect.
+            red if you are incorrect.
+          </p>
+
+          <p className="w-full text-center text-black">
+            <strong>Game End</strong>
+            <br />
+            The game will end if you make 2 inccorect repsonses or after 15
+            letters are shown.
           </p>
 
           <Button
