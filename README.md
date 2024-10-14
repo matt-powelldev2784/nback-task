@@ -11,7 +11,7 @@
 ## Deployed App
 * App deployed on AWS S3.
 * CICD setup using github actions.
-* Deployed app can be accessed at below link:
+* Deployed app can be accessed using the following link:
 http://matt-powell-2784-two-back-memory-test-game.s3-website.eu-west-2.amazonaws.com/
 
 ## My approach
