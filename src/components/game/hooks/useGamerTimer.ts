@@ -1,5 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
-import { addLogToLocalStorage } from 'utils/addLogToLocalStorage'
+import {
+  addLogToLocalStorage,
+  addStringToLocalStorage
+} from 'utils/addLogToLocalStorage'
 import { get15LetterString } from 'utils/get15LetterString'
 
 const useGameTimer = () => {
@@ -16,6 +19,7 @@ const useGameTimer = () => {
       if (currentIndex > 15) {
         clearInterval(interval)
         addLogToLocalStorage({ type: 'endGame' })
+        addStringToLocalStorage(string)
         return
       }
 
