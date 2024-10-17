@@ -25,11 +25,6 @@ const useGameOver = ({ currentIndex, setCurrentIndex }: UseGameOverProps) => {
     }
   }, [isGameOver, currentIndex, setCurrentIndex])
 
-  useEffect(() => {
-    console.log('currentIndex', currentIndex)
-    console.log('isGameOver', isGameOver)
-  }, [currentIndex, isGameOver])
-
   return { isGameOver }
 }
 

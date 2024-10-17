@@ -5,7 +5,9 @@ import { get15LetterString } from 'utils/get15LetterString'
 const useGameTimer = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [currentLetter, setCurrentLetter] = useState('')
+  const [isGetReady, setIsGetReady] = useState(true)
   const string = useMemo(() => get15LetterString(), [])
+  console.log('string', string)
 
   useEffect(() => {
     // chnage the letter every 3 seconds
@@ -15,6 +17,8 @@ const useGameTimer = () => {
         addLogToLocalStorage({ type: 'endGame' })
         return
       }
+
+      if (isGetReady) setIsGetReady(false)
       setCurrentIndex((prevIndex) => prevIndex + 1)
       setCurrentLetter(string[currentIndex])
     }, 2200)
@@ -23,9 +27,15 @@ const useGameTimer = () => {
     return () => {
       clearInterval(interval)
     }
-  }, [currentIndex, string])
+  }, [currentIndex, string, isGetReady])
 
-  return { currentIndex, currentLetter, string, setCurrentIndex }
+  return {
+    isGetReady,
+    currentIndex,
+    currentLetter,
+    string,
+    setCurrentIndex
+  }
 }
 
 export default useGameTimer
