@@ -11,8 +11,9 @@ interface GameProps {
 }
 
 export const Game = ({ setCurrentScreen }: GameProps) => {
-  const { currentIndex, currentLetter, string, setCurrentIndex } =
+  const { isGetReady, currentIndex, currentLetter, string, setCurrentIndex } =
     useGameTimer()
+
   const { userHadRepsonded, isCorrectResponse } = useCheckLetterMatch({
     currentLetter,
     currentString: string,
@@ -39,15 +40,13 @@ export const Game = ({ setCurrentScreen }: GameProps) => {
   return (
     <section className="flexCol">
       <div className="size-full h-[300px] max-w-[800px] bg-gray-900 flexCol sm:mt-4 md:mt-16">
-        {currentIndex === 0 && (
-          <p className="text-5xl text-white">GET READY...</p>
-        )}
+        {isGetReady && <p className="text-5xl text-white">GET READY...</p>}
 
         {currentIndex > 0 && currentIndex <= 15 && (
           <p className={letterColorClasses}>{currentLetter}</p>
         )}
 
-        {currentIndex > 15 && <p className="text-5xl text-white">GAME OVER!</p>}
+        {isGameOver && <p className="text-5xl text-white">GAME OVER!</p>}
       </div>
 
       {!isGameOver ? (
