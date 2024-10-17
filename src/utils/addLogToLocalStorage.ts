@@ -67,3 +67,7 @@ export const addAnswerCountToStorage = (isResponseCorrect: boolean) => {
     )
   }
 }
+
+export const addStringToLocalStorage = (string: string) => {
+  localStorage.setItem('string', string)
+}
