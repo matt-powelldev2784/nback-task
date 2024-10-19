@@ -1,4 +1,6 @@
 /// <reference types="vitest" />
+/// <reference types="vite/client" />
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import tsconfigPaths from 'vite-tsconfig-paths'
@@ -10,6 +12,7 @@ export default defineConfig({
     globals: true,
     environment: 'happy-dom',
     setupFiles: '.vitest/setup',
-    include: ['**/test.{ts,tsx}', 'src/tests/**/*.test.{ts,tsx}']
+    include: ['**/test.{ts,tsx}', 'src/tests/**/*.test.{ts,tsx}'],
+    css: true
   }
 })
