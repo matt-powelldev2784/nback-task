@@ -3,14 +3,12 @@ import useCheckLetterMatch from './hooks/useCheckLetterMatch'
 import { generateTextColorClasses } from './utils/generateTextColorClasses'
 import Button from 'components/ui/button/Button'
 import useGameOver from './hooks/useGameOver'
-import { Dispatch, SetStateAction } from 'react'
-import { screenT } from 'types/screenT'
+import { useContext } from 'react'
+import { AppContext } from 'components/App'
 
-interface GameProps {
-  setCurrentScreen: Dispatch<SetStateAction<screenT>>
-}
+export const Game = () => {
+  const { setCurrentScreen } = useContext(AppContext)
 
-export const Game = ({ setCurrentScreen }: GameProps) => {
   const { isGetReady, currentIndex, currentLetter, string, setCurrentIndex } =
     useGameTimer()
 

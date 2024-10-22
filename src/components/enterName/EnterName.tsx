@@ -1,14 +1,14 @@
 import { SubmitHandler, useForm } from 'react-hook-form'
 import * as Yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { Dispatch, SetStateAction } from 'react'
-import { screenT } from 'types/screenT'
+import { useContext } from 'react'
 import Button from 'components/ui/button/Button'
 import {
   addLogToLocalStorage,
   initialiseLocalStorage,
   clearLocalStorage
 } from 'utils/addLogToLocalStorage'
+import { AppContext } from 'components/App'
 
 type Inputs = {
   name: string
@@ -20,11 +20,9 @@ export const ideaValidationSchema = Yup.object({
     .max(50, 'Name must be 50 characters or less')
 })
 
-interface EnterNameProps {
-  setCurrentScreen: Dispatch<SetStateAction<screenT>>
-}
+export const EnterName = () => {
+  const { setCurrentScreen } = useContext(AppContext)
 
-export const EnterName = ({ setCurrentScreen }: EnterNameProps) => {
   const {
     register,
     handleSubmit,

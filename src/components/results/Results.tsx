@@ -1,13 +1,11 @@
 import Button from 'components/ui/button/Button'
-import { Dispatch, SetStateAction } from 'react'
-import { screenT } from 'types/screenT'
 import { countRepeatingLetters } from './utils/countRepeatedLetters'
+import { useContext } from 'react'
+import { AppContext } from 'components/App'
 
-interface ResultsProps {
-  setCurrentScreen: Dispatch<SetStateAction<screenT>>
-}
+export const Results = () => {
+  const { setCurrentScreen } = useContext(AppContext)
 
-export const Results = ({ setCurrentScreen }: ResultsProps) => {
   const incorrectAnswerCount =
     localStorage.getItem('incorrectAnswerCount') || '0'
   const correctAnswerCount = localStorage.getItem('correctAnswerCount') || '0'
