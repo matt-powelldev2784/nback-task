@@ -20,10 +20,10 @@ type AppContextT = {
 const AppContextVallues: AppContextT = {
   currentScreen: 'home',
   setCurrentScreen: () => {},
-  correctAnswerCount: 0,
-  incorrectAnswerCount: 0,
   playerName: '',
   setPlayerName: () => {},
+  correctAnswerCount: 0,
+  incorrectAnswerCount: 0,
   currentString: ''
 }
 
