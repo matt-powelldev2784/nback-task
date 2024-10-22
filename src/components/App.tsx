@@ -10,9 +10,10 @@ import { Results } from './results/Results'
 type AppContextT = {
   currentScreen: screenT
   setCurrentScreen: Dispatch<SetStateAction<screenT>>
+  playerName: string
+  setPlayerName: Dispatch<SetStateAction<string>>
   correctAnswerCount: number
   incorrectAnswerCount: number
-  name: string
   currentString: string
 }
 
@@ -21,7 +22,8 @@ const AppContextVallues: AppContextT = {
   setCurrentScreen: () => {},
   correctAnswerCount: 0,
   incorrectAnswerCount: 0,
-  name: '',
+  playerName: '',
+  setPlayerName: () => {},
   currentString: ''
 }
 
@@ -29,10 +31,17 @@ export const AppContext = createContext(AppContextVallues)
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState<screenT>('home')
+  const [playerName, setPlayerName] = useState<string>('')
 
   return (
     <AppContext.Provider
-      value={{ ...AppContextVallues, currentScreen, setCurrentScreen }}
+      value={{
+        ...AppContextVallues,
+        currentScreen,
+        setCurrentScreen,
+        playerName,
+        setPlayerName
+      }}
     >
       <main className="relative flex min-h-lvh w-screen flex-col items-center overflow-hidden">
         <img

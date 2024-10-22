@@ -3,11 +3,6 @@ import * as Yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useContext } from 'react'
 import Button from 'components/ui/button/Button'
-import {
-  addLogToLocalStorage,
-  initialiseLocalStorage,
-  clearLocalStorage
-} from 'utils/addLogToLocalStorage'
 import { AppContext } from 'components/App'
 
 type Inputs = {
@@ -21,7 +16,7 @@ export const ideaValidationSchema = Yup.object({
 })
 
 export const EnterName = () => {
-  const { setCurrentScreen } = useContext(AppContext)
+  const { setCurrentScreen, setPlayerName } = useContext(AppContext)
 
   const {
     register,
@@ -33,10 +28,8 @@ export const EnterName = () => {
     mode: 'onChange'
   })
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    clearLocalStorage()
-    initialiseLocalStorage(data.name)
-    addLogToLocalStorage({ type: 'startGame' })
+  const onSubmit: SubmitHandler<Inputs> = ({ name }) => {
+    setPlayerName(name)
     setCurrentScreen('game')
     reset() // reset form
   }
