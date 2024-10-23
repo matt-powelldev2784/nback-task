@@ -4,17 +4,21 @@ import { useContext } from 'react'
 import { AppContext } from 'components/App'
 
 export const Results = () => {
-  const { setCurrentScreen } = useContext(AppContext)
+  const {
+    setCurrentScreen,
+    correctAnswerCount,
+    incorrectAnswerCount,
+    currentGameString,
+    playerName
+  } = useContext(AppContext)
 
-  const incorrectAnswerCount =
-    localStorage.getItem('incorrectAnswerCount') || '0'
-  const correctAnswerCount = localStorage.getItem('correctAnswerCount') || '0'
-  const letterString = localStorage.getItem('string') || ''
-
-  const repeatedCharacters = countRepeatingLetters(letterString)
+  const repeatedCharacters = countRepeatingLetters(currentGameString)
 
   return (
     <section className="rounded-3xl bg-white p-2 py-14 shadow-lg flexCol sm:mt-4 sm:w-11/12 md:mt-16 md:max-w-[700px] md:px-12">
+      <p className="mb-2 w-11/12 text-center text-2xl font-bold text-black sm:text-lg">
+        {playerName.toUpperCase()} Results
+      </p>
       <p className="mb-2 w-11/12 text-center text-2xl text-black sm:text-lg">
         You had <strong>{incorrectAnswerCount}</strong> incorrect answers
       </p>
@@ -23,7 +27,7 @@ export const Results = () => {
       </p>
       <p className="mb-2 w-11/12 text-center text-2xl text-black sm:text-lg">
         There were <strong>{repeatedCharacters}</strong> repeated characters in
-        the string
+        the <strong>{currentGameString}</strong> string
       </p>
 
       <Button

@@ -13,8 +13,6 @@ export const Game = () => {
     currentLetterIndex
   })
 
-  console.log('currentGameString', currentGameString)
-
   // generate the color of the text based on the user's response
   // white text for no response yet
   // green text for correct response
