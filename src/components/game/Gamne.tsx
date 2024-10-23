@@ -7,6 +7,7 @@ import { generateTextColorClasses } from './utils/generateTextColorClasses'
 
 export const Game = () => {
   const { setCurrentScreen, currentGameString } = useContext(AppContext)
+
   const { currentLetterIndex, gameStatus } = useGameTimer()
 
   const { userHadRepsonded, isCorrectResponse } = useCheckLetterMatch({
