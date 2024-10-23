@@ -2,6 +2,7 @@ import Button from 'components/ui/button/Button'
 import { countRepeatingLetters } from './utils/countRepeatedLetters'
 import { useContext } from 'react'
 import { AppContext } from 'components/App'
+import { addResultsToDb } from './utils/addResultsToDb'
 
 export const Results = () => {
   const {
@@ -13,6 +14,14 @@ export const Results = () => {
   } = useContext(AppContext)
 
   const repeatedCharacters = countRepeatingLetters(currentGameString)
+
+  addResultsToDb({
+    playerName,
+    correctAnswerCount,
+    incorrectAnswerCount,
+    possibleRepeatedCharacters: repeatedCharacters,
+    gameString: currentGameString
+  })
 
   return (
     <section className="rounded-3xl bg-white p-2 py-14 shadow-lg flexCol sm:mt-4 sm:w-11/12 md:mt-16 md:max-w-[700px] md:px-12">
