@@ -1,14 +1,11 @@
-import { Dispatch, SetStateAction, useState } from 'react'
+import { useContext, useState } from 'react'
 import two_back_logo from '../../assets/two_back_logo.svg'
-import { screenT } from 'types/screenT'
 import Button from 'components/ui/button/Button'
+import { AppContext } from 'components/App'
 
-interface HomeProps {
-  setCurrentScreen: Dispatch<SetStateAction<screenT>>
-}
-
-export const Home = ({ setCurrentScreen }: HomeProps) => {
+export const Home = () => {
   const [displayInstructions, setDisplayInstructions] = useState(false)
+  const { setCurrentScreen } = useContext(AppContext)
 
   return (
     <section className="flex min-h-screen w-full flex-col items-center justify-start md:pt-12">
