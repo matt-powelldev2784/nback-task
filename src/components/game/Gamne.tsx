@@ -2,24 +2,27 @@ import useGameTimer from './hooks/useGameTimer'
 import { useContext } from 'react'
 import { AppContext } from 'components/App'
 import Button from 'components/ui/button/Button'
+import useCheckLetterMatch from './hooks/useCheckLetterMatch'
+import { generateTextColorClasses } from './utils/generateTextColorClasses'
 
 export const Game = () => {
   const { setCurrentScreen, currentGameString } = useContext(AppContext)
   const { currentLetterIndex, gameStatus } = useGameTimer()
 
-  // const { userHadRepsonded, isCorrectResponse } = useCheckLetterMatch({
-  //   currentLetter,
-  //   currentString: string
-  // })
+  const { userHadRepsonded, isCorrectResponse } = useCheckLetterMatch({
+    currentLetterIndex
+  })
+
+  console.log('currentGameString', currentGameString)
 
   // generate the color of the text based on the user's response
   // white text for no response yet
   // green text for correct response
   // red text for incorrect response
-  // const letterColorClasses = generateTextColorClasses({
-  //   userHadRepsonded,
-  //   isCorrectResponse
-  // })
+  const letterColorClasses = generateTextColorClasses({
+    userHadRepsonded,
+    isCorrectResponse
+  })
 
   // This is used to simulate the user pressing the space bar if the repeated letter button is used
   // useCheckLetterMatch is listening for a space bar keydown event
@@ -36,7 +39,7 @@ export const Game = () => {
         )}
 
         {gameStatus === 'inPlay' && (
-          <p className={'text-white'}>
+          <p className={letterColorClasses}>
             {currentGameString[currentLetterIndex]}
           </p>
         )}

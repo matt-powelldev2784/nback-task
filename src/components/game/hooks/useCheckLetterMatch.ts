@@ -1,22 +1,17 @@
-import { useEffect, useState } from 'react'
-import {
-  addLogToLocalStorage,
-  addAnswerCountToStorage
-} from 'utils/addLogToLocalStorage'
+import { AppContext } from 'components/App'
+import { useContext, useEffect, useState } from 'react'
 
-interface UseSpaceBarProps {
-  currentLetter: string
-  currentString: string
-  currentIndex: number
+interface UseCheckLetterMatchProps {
+  currentLetterIndex: number
 }
 
 const useCheckLetterMatch = ({
-  currentLetter,
-  currentString,
-  currentIndex
-}: UseSpaceBarProps) => {
+  currentLetterIndex
+}: UseCheckLetterMatchProps) => {
   const [userHadRepsonded, setUserHadRepsonded] = useState(false)
   const [isCorrectResponse, setIsCorrectResponse] = useState<boolean>(false)
+  const { currentGameString, setCorrectAnswerCount, setIncorrectAnswerCount } =
+    useContext(AppContext)
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -24,26 +19,30 @@ const useCheckLetterMatch = ({
       if (event.code !== 'Space') return
 
       // Prevent user from making a response if the game is not in progress
-      if (currentIndex === 0) return
-      if (currentIndex > 15) return
+      if (currentLetterIndex === -1) return
+      if (currentLetterIndex > currentGameString.length - 1) return
 
       // Prevent multiple presses on the same letter
       if (userHadRepsonded) return
 
       // handle correct user response
-      if (currentLetter === currentString[currentIndex - 3]) {
+      if (
+        currentGameString[currentLetterIndex] ===
+        currentGameString[currentLetterIndex - 2]
+      ) {
         setUserHadRepsonded(true)
         setIsCorrectResponse(true)
-        addLogToLocalStorage({ type: 'repeatedLetter', correctAnswer: true })
-        addAnswerCountToStorage(true)
+        setCorrectAnswerCount((prevCount) => prevCount + 1)
       }
 
       // handle incorrect user response
-      if (currentLetter !== currentString[currentIndex - 3]) {
+      if (
+        currentGameString[currentLetterIndex] !==
+        currentGameString[currentLetterIndex - 2]
+      ) {
         setUserHadRepsonded(true)
         setIsCorrectResponse(false)
-        addLogToLocalStorage({ type: 'repeatedLetter', correctAnswer: false })
-        addAnswerCountToStorage(false)
+        setIncorrectAnswerCount((prevCount) => prevCount + 1)
       }
     }
 
@@ -53,13 +52,19 @@ const useCheckLetterMatch = ({
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [currentLetter, currentIndex, currentString, userHadRepsonded])
+  }, [
+    currentGameString,
+    currentLetterIndex,
+    setIncorrectAnswerCount,
+    setCorrectAnswerCount,
+    userHadRepsonded
+  ])
 
   // Reset isCorrectResponse and userHadRepsonded when currentLetter changes
   useEffect(() => {
     setIsCorrectResponse(false)
     setUserHadRepsonded(false)
-  }, [currentLetter])
+  }, [currentLetterIndex])
 
   return { userHadRepsonded, isCorrectResponse }
 }
