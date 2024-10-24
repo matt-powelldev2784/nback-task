@@ -28,15 +28,29 @@ test('end to end test', async ({ page }) => {
   // check repeaed letter button can be clicked
   // the game will end because the repeated letter button is clicked on the first
   // two letters - which means it's the no letter can be repeated yet
-  await page.waitForTimeout(4400)
+  await page.waitForTimeout(6000)
   await repeatedLetterButton.click()
   await page.waitForTimeout(2200)
   await repeatedLetterButton.click()
-  await page.waitForTimeout(2200)
+  await page.waitForTimeout(4000)
 
   // expect to see view results button
   const viewResultsButton = page.getByRole('button', {
     name: 'View Results'
   })
   await expect(viewResultsButton).toBeVisible()
+
+  // click view results button
+  await viewResultsButton.click()
+
+  ///////////////////////////////// Results Screen Tests  //////////////////////////////////
+  await expect(page.getByText('Results')).toBeVisible()
+
+  // expect to see results screen
+  const startAgainButton = page.getByRole('button', { name: 'Start Again' })
+  startAgainButton.click()
+
+  ///////////////////////////////// Home Screen Tests  //////////////////////////////////
+  // expect to see home screen
+  await expect(startGameButton).toBeVisible()
 })

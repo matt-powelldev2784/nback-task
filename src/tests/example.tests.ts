@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { test, expect, type Page } from '@playwright/test'
 
+// npx playwright test --headed
+
 test.beforeEach(async ({ page }) => {
   await page.goto('https://demo.playwright.dev/todomvc')
 })
