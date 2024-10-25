@@ -7,7 +7,7 @@ import { screenT } from 'types/screenT'
 import { EnterName } from './enterName/EnterName'
 import { Results } from './results/Results'
 
-type AppContextT = {
+export type AppContextT = {
   currentScreen: screenT
   setCurrentScreen: Dispatch<SetStateAction<screenT>>
   playerName: string
