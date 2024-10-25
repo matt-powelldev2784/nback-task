@@ -5,7 +5,7 @@ test('end to end test', async ({ page }) => {
   await page.goto('http://localhost:5173/')
 
   ///////////////////////////////// Home Screen Tests  //////////////////////////////////
-  // click start game button
+  // expect user can click start game button
   const startGameButton = page.getByRole('button', { name: 'Start Game' })
   startGameButton.click()
 
@@ -13,7 +13,7 @@ test('end to end test', async ({ page }) => {
   // expect to see enter name screen
   await expect(page.getByText('Enter your name to begin:')).toBeVisible()
 
-  // enter name and click submit butotn
+  // expect user can enter name and click submit butotn
   await page.fill('input', 'John Snmith')
   const submitButton = page.getByRole('button', { name: 'Submit' })
   submitButton.click()
@@ -25,9 +25,10 @@ test('end to end test', async ({ page }) => {
   })
   await expect(repeatedLetterButton).toBeVisible()
 
-  // check repeaed letter button can be clicked
-  // the game will end because the repeated letter button is clicked on the first
-  // two letters - which means it's the no letter can be repeated yet
+  // expect user can click the repeaed letter button
+  // the game will end because the repeated letter button is clicked on the first and second letter
+  // both answers will be incorrect as you can't get a repeated letter on the first two letters
+  // after two inccorect guesses the game ends
   await page.waitForTimeout(6000)
   await repeatedLetterButton.click()
   await page.waitForTimeout(2200)
@@ -40,13 +41,14 @@ test('end to end test', async ({ page }) => {
   })
   await expect(viewResultsButton).toBeVisible()
 
-  // click view results button
+  // expect user can click view results button
   await viewResultsButton.click()
 
   ///////////////////////////////// Results Screen Tests  //////////////////////////////////
+  // expect to see results screen
   await expect(page.getByText('Results')).toBeVisible()
 
-  // expect to see results screen
+  // expect user can click start again button
   const startAgainButton = page.getByRole('button', { name: 'Start Again' })
   startAgainButton.click()
 
