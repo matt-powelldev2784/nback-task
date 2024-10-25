@@ -6,11 +6,11 @@ import { addResultsToDb } from './utils/addResultsToDb'
 
 export const Results = () => {
   const {
-    setCurrentScreen,
     correctAnswerCount,
     incorrectAnswerCount,
     currentGameString,
-    playerName
+    playerName,
+    resetGame
   } = useContext(AppContext)
 
   const repeatedCharacters = countRepeatingLetters(currentGameString)
@@ -42,7 +42,9 @@ export const Results = () => {
       <Button
         classNames="mt-4 max-w-full rounded-xl bg-blue-800 text-xl tracking-wide text-white active:opacity-90 sm:w-11/12 sm:p-2 md:w-96 md:p-4"
         text="Start Again"
-        onClick={() => setCurrentScreen('home')}
+        onClick={() => {
+          resetGame()
+        }}
       />
     </section>
   )
