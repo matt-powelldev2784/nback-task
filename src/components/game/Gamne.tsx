@@ -4,15 +4,20 @@ import { AppContext } from 'components/App'
 import Button from 'components/ui/button/Button'
 import useCheckLetterMatch from './hooks/useCheckLetterMatch'
 import { generateTextColorClasses } from './utils/generateTextColorClasses'
+import useExposeSetCurrentGameStringForTesting from './hooks/useExposeSetCurrentGameStringForTesting'
 
 export const Game = () => {
-  const { setCurrentScreen, currentGameString } = useContext(AppContext)
+  const { setCurrentScreen, currentGameString, setCurrentGameString } =
+    useContext(AppContext)
 
   const { currentLetterIndex, gameStatus } = useGameTimer()
 
   const { userHadRepsonded, isCorrectResponse } = useCheckLetterMatch({
     currentLetterIndex
   })
+
+  // Use the custom hook to expose setCurrentGameString for testing
+  useExposeSetCurrentGameStringForTesting(setCurrentGameString)
 
   // generate the color of the text based on the user's response
   // white text for no response yet
