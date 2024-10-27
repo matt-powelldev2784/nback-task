@@ -4,7 +4,7 @@ test('user completes game with a mix of correct and incorrect answers', async ({
   page
 }) => {
   // navigate to home page
-  await page.goto('http://localhost:5173/')
+  await page.goto('/')
 
   ///////////////////////////////// Home Screen Tests  //////////////////////////////////
   // expect user can click start game button
