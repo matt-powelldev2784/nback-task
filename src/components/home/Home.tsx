@@ -72,7 +72,7 @@ export const Home = () => {
           <p className="w-full text-center text-black">
             <strong>Game End</strong>
             <br />
-            The game will end if you make 2 incorrect repsonses or after 15
+            The game will end if you make 2 incorrect responses or after 15
             letters are shown.
           </p>
 

@@ -8,7 +8,7 @@ interface UseCheckLetterMatchProps {
 const useCheckLetterMatch = ({
   currentLetterIndex
 }: UseCheckLetterMatchProps) => {
-  const [userHadRepsonded, setUserHadRepsonded] = useState(false)
+  const [userHasResponded, setUserHasResponded] = useState(false)
   const [isCorrectResponse, setIsCorrectResponse] = useState<boolean>(false)
   const { currentGameString, setCorrectAnswerCount, setIncorrectAnswerCount } =
     useContext(AppContext)
@@ -23,14 +23,14 @@ const useCheckLetterMatch = ({
       if (currentLetterIndex > currentGameString.length - 1) return
 
       // Prevent multiple presses on the same letter
-      if (userHadRepsonded) return
+      if (userHasResponded) return
 
       // handle correct user response
       if (
         currentGameString[currentLetterIndex] ===
         currentGameString[currentLetterIndex - 2]
       ) {
-        setUserHadRepsonded(true)
+        setUserHasResponded(true)
         setIsCorrectResponse(true)
         setCorrectAnswerCount((prevCount) => prevCount + 1)
       }
@@ -40,7 +40,7 @@ const useCheckLetterMatch = ({
         currentGameString[currentLetterIndex] !==
         currentGameString[currentLetterIndex - 2]
       ) {
-        setUserHadRepsonded(true)
+        setUserHasResponded(true)
         setIsCorrectResponse(false)
         setIncorrectAnswerCount((prevCount) => prevCount + 1)
       }
@@ -57,16 +57,16 @@ const useCheckLetterMatch = ({
     currentLetterIndex,
     setIncorrectAnswerCount,
     setCorrectAnswerCount,
-    userHadRepsonded
+    userHasResponded
   ])
 
-  // Reset isCorrectResponse and userHadRepsonded when currentLetter changes
+  // Reset isCorrectResponse and userHasResponded when currentLetter changes
   useEffect(() => {
     setIsCorrectResponse(false)
-    setUserHadRepsonded(false)
+    setUserHasResponded(false)
   }, [currentLetterIndex])
 
-  return { userHadRepsonded, isCorrectResponse }
+  return { userHasResponded, isCorrectResponse }
 }
 
 export default useCheckLetterMatch

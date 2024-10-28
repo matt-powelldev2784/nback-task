@@ -1,5 +1,5 @@
 import './index.css'
-import { Game } from './game/Gamne'
+import { Game } from './game/Game'
 import puzzle_bg from '../assets/puzzle_simple_plus1.svg'
 import { Home } from './home/Home'
 import { createContext, Dispatch, SetStateAction, useState } from 'react'
@@ -21,7 +21,7 @@ export type AppContextT = {
   resetGame: () => void
 }
 
-const AppContextVallues: AppContextT = {
+const AppContextValues: AppContextT = {
   currentScreen: 'home',
   setCurrentScreen: () => {},
   playerName: '',
@@ -35,7 +35,7 @@ const AppContextVallues: AppContextT = {
   resetGame: () => {}
 }
 
-export const AppContext = createContext(AppContextVallues)
+export const AppContext = createContext(AppContextValues)
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState<screenT>('home')

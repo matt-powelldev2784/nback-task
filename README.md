@@ -22,7 +22,7 @@ Implement testing with Vitest and React Testing Library.
 
 * Responsive design
 * User needs to input their name before game starts
-* Create random seqence of 15 letters
+* Create random sequence of 15 letters
 * Show one letter at a time for 2 seconds
 * User has to press a key if letter that was shown 2 steps back is displayed again
 * Task ends if there are 2 errors or maximum of 15 letters displayed
