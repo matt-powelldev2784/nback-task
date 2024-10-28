@@ -12,7 +12,7 @@ export default defineConfig({
     globals: true,
     environment: 'happy-dom',
     setupFiles: '.vitest/setup',
-    include: ['**/test.{ts,tsx}', 'src/tests/**/*.test.{ts,tsx}'],
+    include: ['src/**/*.test.{ts,tsx}', 'src/tests/**/*.test.{ts,tsx}'],
     css: true
   }
 })
