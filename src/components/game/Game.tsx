@@ -12,7 +12,7 @@ export const Game = () => {
 
   const { currentLetterIndex, gameStatus } = useGameTimer()
 
-  const { userHadRepsonded, isCorrectResponse } = useCheckLetterMatch({
+  const { userHasResponded, isCorrectResponse } = useCheckLetterMatch({
     currentLetterIndex
   })
 
@@ -24,7 +24,7 @@ export const Game = () => {
   // green text for correct response
   // red text for incorrect response
   const letterColorClasses = generateTextColorClasses({
-    userHadRepsonded,
+    userHasResponded,
     isCorrectResponse
   })
 
