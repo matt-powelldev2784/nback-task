@@ -11,9 +11,9 @@ const useGameTimer = () => {
   const [gameStatus, setGameStatus] = useState<GamesStatusT>('getReady')
 
   useEffect(() => {
-    // chnage the letter every 2 seconds
+    // change the letter every 2 seconds
     const interval = setInterval(() => {
-      // initilise string to start the game
+      // initialize string to start the game
       if (currentGameString === '') {
         setCurrentGameString(get15LetterString())
         return
