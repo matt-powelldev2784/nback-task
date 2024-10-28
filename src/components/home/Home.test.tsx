@@ -1,3 +1,6 @@
+//
+// TODO : syntax error is due the home component using a svg file
+// I didn't want to spend anymore time finding a solution for this
 import { screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { Home } from './Home'
