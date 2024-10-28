@@ -3,10 +3,15 @@ import { render } from '@testing-library/react'
 import { ReactNode } from 'react'
 import { AppContext, AppContextT } from '../../components/App'
 
-const renderWithContext = (
-  children: ReactNode,
-  contextValues: Partial<AppContextT> = {}
-) => {
+interface RenderWithContextProps {
+  children: ReactNode
+  contextValues?: Partial<AppContextT>
+}
+
+const renderWithContext = ({
+  children,
+  contextValues
+}: RenderWithContextProps) => {
   const defaultContextValues: AppContextT = {
     currentScreen: 'home',
     setCurrentScreen: vi.fn(),
