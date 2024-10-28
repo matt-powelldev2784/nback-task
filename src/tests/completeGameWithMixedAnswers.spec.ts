@@ -32,12 +32,12 @@ test('user completes game with a mix of correct and incorrect answers', async ({
     window.setCurrentGameString('XZABABABABABABZ')
   })
 
-  // Wait until first letter appears and then click repeated letter button
-  // This will give an incorrect answer
+  // wait until first letter appears and then click repeated letter button
+  // this will give an incorrect answer
   await page.waitForTimeout(2300)
   await repeatedLetterButton.click()
   // wait until the 5th letters appears this is the first repeating letter in my currentGameString
-  // This will give a correct answer
+  // this will give a correct answer
   await page.waitForTimeout(8900)
   await repeatedLetterButton.click()
   // wait for game to complete before clicking view results button
