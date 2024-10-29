@@ -1,6 +1,3 @@
-// TODO: Syntax error in the test file seems to relate to the way Babel handles decorators and CSS files.
-// I did not want to spend anymore time finding a solution for this
-
 import { renderWithContext } from 'tests/test-utils/renderWithContext'
 import { EnterName } from './EnterName'
 import { screen } from '@testing-library/react'
