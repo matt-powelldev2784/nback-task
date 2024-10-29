@@ -33,4 +33,4 @@ const renderWithContext = ({
   )
 }
 
-export { renderWithContext as render }
+export { renderWithContext }
