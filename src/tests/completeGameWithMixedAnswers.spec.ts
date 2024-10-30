@@ -23,7 +23,7 @@ test('user completes game with a mix of correct and incorrect answers', async ({
   ///////////////////////////////// Game Screen Tests  //////////////////////////////////
   //expect to see game screen
   const repeatedLetterButton = page.getByRole('button', {
-    name: 'Repeated Letter'
+    name: 'Mark Repeated Letter'
   })
   await expect(repeatedLetterButton).toBeVisible()
 
