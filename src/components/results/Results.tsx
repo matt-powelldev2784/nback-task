@@ -29,14 +29,14 @@ export const Results = () => {
         {playerName.toUpperCase()} Results
       </p>
       <p className="mb-2 w-11/12 text-center text-2xl text-black sm:text-lg">
-        You had <strong>{incorrectAnswerCount}</strong> incorrect answers
+        You had <b>{incorrectAnswerCount}</b> incorrect answers
       </p>
       <p className="mb-2 w-11/12 text-center text-2xl text-black sm:text-lg">
-        You had <strong>{correctAnswerCount}</strong> correct answers
+        You had <b>{correctAnswerCount}</b> correct answers
       </p>
       <p className="mb-2 w-11/12 text-center text-2xl text-black sm:text-lg">
-        There were <strong>{repeatedCharacters}</strong> repeated characters in
-        the <strong>{currentGameString}</strong> string
+        There were <b>{repeatedCharacters}</b> repeated characters in the{' '}
+        <b>{currentGameString}</b> string
       </p>
 
       <Button
