@@ -65,3 +65,41 @@ test('displays the current letter in green if an correct guess is made', async (
 
   expect(screen.getByText('A')).toHaveClass('text-green-500')
 })
+
+test('space bar can be used to make a correct guess', async () => {
+  const user = userEvent.setup()
+
+  // Mock implementation of useGameTimer
+  mockUseGameTimer.mockReturnValue({
+    currentLetterIndex: 2,
+    gameStatus: 'inPlay'
+  })
+
+  renderWithContext({
+    children: <Game />,
+    contextValues: { currentGameString: 'AAAAAAAAAAAAAA' }
+  })
+
+  await user.keyboard('[Space]')
+
+  expect(screen.getByText('A')).toHaveClass('text-green-500')
+})
+
+test('space bar can be used to make a incorrect guess', async () => {
+  const user = userEvent.setup()
+
+  // Mock implementation of useGameTimer
+  mockUseGameTimer.mockReturnValue({
+    currentLetterIndex: 2,
+    gameStatus: 'inPlay'
+  })
+
+  renderWithContext({
+    children: <Game />,
+    contextValues: { currentGameString: 'ABCDEFGHIJKLMN' }
+  })
+
+  await user.keyboard('[Space]')
+
+  expect(screen.getByText('C')).toHaveClass('text-red-500')
+})
