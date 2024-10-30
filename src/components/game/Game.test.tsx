@@ -1,9 +1,9 @@
-import { renderWithContext } from 'tests/test-utils/renderWithContext'
 import { Game } from './Game'
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { vi } from 'vitest'
 import useGameTimer from './hooks/useGameTimer'
+import { renderWithContext } from 'tests/vitest/test-utils/renderWithContext'
 
 // Mock the useGameTimer hook
 vi.mock('./hooks/useGameTimer', () => ({
@@ -35,6 +35,4 @@ test('displays the current letter in red if an incorrect guess is made', async (
   await user.click(repeatedLetterButton)
 
   expect(screen.getByText('Z')).toHaveClass('text-red-500')
-
-  screen.debug()
 })

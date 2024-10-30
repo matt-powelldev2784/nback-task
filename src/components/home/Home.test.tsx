@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { Home } from './Home'
-import { renderWithContext } from 'tests/test-utils/renderWithContext'
 import userEvent from '@testing-library/user-event'
+import { renderWithContext } from 'tests/vitest/test-utils/renderWithContext'
 
 test('checks home component renders and that the start game button can be pressed', async () => {
   const user = userEvent.setup()

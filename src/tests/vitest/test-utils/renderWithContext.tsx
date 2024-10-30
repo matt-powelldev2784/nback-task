@@ -1,7 +1,7 @@
 // src/test-utils.tsx
 import { render } from '@testing-library/react'
+import { AppContext, AppContextT } from 'components/App'
 import { ReactNode } from 'react'
-import { AppContext, AppContextT } from '../../components/App'
 
 interface RenderWithContextProps {
   children: ReactNode
