@@ -57,7 +57,7 @@ export const Game = () => {
         <>
           <Button
             classNames="my-2 max-w-full rounded-xl bg-blue-800 text-xl tracking-wide text-white active:opacity-90 sm:mt-6 sm:w-11/12 sm:p-2 md:mt-12 md:w-96 md:p-4"
-            text="Repeated Letter"
+            text="Mark Repeated Letter"
             onClick={dispatchSpaceBarEvent}
           />
 

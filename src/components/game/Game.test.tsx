@@ -31,7 +31,7 @@ test('displays the current letter in red if an incorrect guess is made', async (
     }
   })
 
-  const repeatedLetterButton = screen.getByText('Repeated Letter')
+  const repeatedLetterButton = screen.getByText('Mark Repeated Letter')
   await user.click(repeatedLetterButton)
 
   expect(screen.getByText('Z')).toHaveClass('text-red-500')
