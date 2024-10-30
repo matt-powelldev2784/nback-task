@@ -10,9 +10,9 @@ export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   test: {
     globals: true,
-    environment: 'happy-dom',
+    environment: 'jsdom',
     setupFiles: '.vitest/setup',
-    include: ['**/test.{ts,tsx}', 'src/tests/**/*.test.{ts,tsx}'],
+    include: ['src/**/*.test.{ts,tsx}', 'src/tests/**/*.test.{ts,tsx}'],
     css: true
   }
 })
