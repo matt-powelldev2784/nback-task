@@ -7,6 +7,9 @@
 3. Run npm run dev
 4. Open http://localhost:5173/ in your browser
 
+## Test
+* To run Playwright end to end test run: npx playwright test
+* To run Vitest unit tests run: npm run test
 
 ## Deployed App
 * App deployed on AWS S3.
