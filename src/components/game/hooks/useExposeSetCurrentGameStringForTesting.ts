@@ -11,10 +11,7 @@ const useExposeSetCurrentGameStringForTesting = (
 ) => {
   useEffect(() => {
     // Expose setCurrentGameString to the global window object for testing
-    if (
-      process.env.NODE_ENV === 'development' ||
-      process.env.NODE_ENV === 'test'
-    ) {
+    if (process.env.NODE_ENV === 'development') {
       window.setCurrentGameString = setCurrentGameString
     }
   }, [setCurrentGameString])
