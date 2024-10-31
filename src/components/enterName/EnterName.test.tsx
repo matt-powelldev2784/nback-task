@@ -16,9 +16,9 @@ test('user can enter their name and click the submit button', async () => {
   const nameInput = screen.getByPlaceholderText('Name')
   const submitButton = screen.getByText('Submit')
 
-  await user.type(nameInput, 'John Doe')
+  await user.type(nameInput, 'John Smith')
   await user.click(submitButton)
 
-  expect(setPlayerName).toHaveBeenCalledWith('John Doe')
+  expect(setPlayerName).toHaveBeenCalledWith('John Smith')
   expect(setCurrentScreen).toHaveBeenCalledWith('game')
 })
