@@ -46,6 +46,7 @@ export const EnterName = () => {
         {...register('name', { required: true })}
         placeholder="Name"
         autoFocus
+        id="name"
         className="rounded-lg border border-gray-400 px-2 text-center text-lg outline-none flexCol focus:border focus:border-primaryBlue sm:h-10 sm:w-11/12 md:h-14 md:w-96"
       />
       <span className="mb-4 min-h-4 text-xs italic text-red-500">
