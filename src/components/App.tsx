@@ -3,13 +3,13 @@ import { Game } from './game/Game'
 import puzzle_bg from '../assets/puzzle_simple_plus1.svg'
 import { Home } from './home/Home'
 import { createContext, Dispatch, SetStateAction, useState } from 'react'
-import { screenT } from 'types/screenT'
+import { ScreenT } from 'types/screenT'
 import { EnterName } from './enterName/EnterName'
 import { Results } from './results/Results'
 
 export type AppContextT = {
-  currentScreen: screenT
-  setCurrentScreen: Dispatch<SetStateAction<screenT>>
+  currentScreen: ScreenT
+  setCurrentScreen: Dispatch<SetStateAction<ScreenT>>
   playerName: string
   setPlayerName: Dispatch<SetStateAction<string>>
   currentGameString: string
@@ -38,7 +38,7 @@ const AppContextValues: AppContextT = {
 export const AppContext = createContext(AppContextValues)
 
 function App() {
-  const [currentScreen, setCurrentScreen] = useState<screenT>('home')
+  const [currentScreen, setCurrentScreen] = useState<ScreenT>('home')
   const [playerName, setPlayerName] = useState<string>('')
   const [currentGameString, setCurrentGameString] = useState<string>('')
   const [correctAnswerCount, setCorrectAnswerCount] = useState<number>(0)
