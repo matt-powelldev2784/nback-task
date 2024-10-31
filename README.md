@@ -19,7 +19,8 @@ http://matt-powell-2784-two-back-memory-test-game.s3-website.eu-west-2.amazonaws
 
 ## My approach
 Build app with Vite, React, TypeScript, TailwindCSS using template form Vite Community.
-Implement testing with Vitest and React Testing Library.
+Implement unit testing with Vitest and React Testing Library.
+Implement end to end testing with Playwright.
 
 ### Project plan in bullet points
 
